@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<Configuration>
+  <config>
+    <version>1.0</version>
+    <author>user</author>
+  </config>
+  <devices>antenna</devices>
+  <devices>radio_module</devices>
+</Configuration>

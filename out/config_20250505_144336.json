@@ -1,0 +1,10 @@
+{
+    "config": {
+        "version": "1.0",
+        "author": "user"
+    },
+    "devices": [
+        "antenna",
+        "radio_module"
+    ]
+}

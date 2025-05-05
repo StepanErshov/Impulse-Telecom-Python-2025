@@ -1,0 +1,75 @@
+module bts-config {
+    namespace "urn:bts:config";
+    prefix btscfg;
+    revision 2024-05-11 {
+        description "Generated from UML model";
+    }
+
+    container bts {
+        description "Base Transmitter Station. This is the only root class";
+
+        leaf id {
+            type uint32;
+            description "Auto-generated attribute";
+        }
+
+        leaf name {
+            type string;
+            description "Auto-generated attribute";
+        }
+    }
+
+    container mgmt {
+        description "Management related";
+    }
+
+    container comm {
+        description "Communication services";
+    }
+
+    container metricjob {
+        description "Perfomance metric job";
+
+        leaf isFinished {
+            type boolean;
+            description "Auto-generated attribute";
+        }
+
+        leaf jobId {
+            type uint32;
+            description "Auto-generated attribute";
+        }
+    }
+
+    container cplane {
+        description "Perfomance metric job";
+    }
+
+    container ru {
+        description "Radio Unit hardware element";
+
+        leaf hwRevision {
+            type string;
+            description "Auto-generated attribute";
+        }
+
+        leaf id {
+            type uint32;
+            description "Auto-generated attribute";
+        }
+
+        leaf ipv4Address {
+            type string;
+            description "Auto-generated attribute";
+        }
+
+        leaf manufacturerName {
+            type string;
+            description "Auto-generated attribute";
+        }
+    }
+
+    container hwe {
+        description "Hardware equipment";
+    }
+}
