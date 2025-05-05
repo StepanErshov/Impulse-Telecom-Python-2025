@@ -6,7 +6,7 @@ from parsers.xml_parser import XMLParser
 from parsers.json_parser import JSONParser
 from generators.yang_generator import YANGGenerator
 from generators.proto_generator import ProtoGenerator
-from validator.validator import validate_uml_model
+from validator.validator import ModelValidator
 
 def ensure_out_dir():
     if not os.path.exists("out"):
@@ -22,7 +22,7 @@ def ParsAndGen():
     uml_model = XMLParser.parse(xml_data)
     config_params = JSONParser.parse(json_data)
 
-    if not validate_uml_model(uml_model):
+    if not ModelValidator.validate_uml_model(uml_model):
         print("Invalid UML model!")
         return
 
