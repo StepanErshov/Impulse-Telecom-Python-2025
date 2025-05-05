@@ -1,87 +1,87 @@
-# Base Station Configuration Generator
+# Генератор конфигураций базовой станции
 
-A project for automatic generation of base station configuration artifacts from UML models and JSON parameters.
+Проект для автоматической генерации артефактов конфигурации базовой станции из UML-моделей и JSON-параметров.
 
 
-## Project structure
+## Структура проекта
 ```
 Impulse Telecom Python 2025/
 │
-├── generators/ # Artifact Generators
-│ ├── base_generator.py # Base class generator
-│ ├── json_generator.py # Generator JSON
-│ ├── proto_generator.py # Generator Protocol Buffers
-│ ├── xml_generator.py # Generator XML
-│ └── yang_generator.py # Generator YANG-models
+├── generators/ # Генераторы артефактов
+│ ├── base_generator.py # Базовый класс генератора
+│ ├── json_generator.py # Генератор JSON
+│ ├── proto_generator.py # Генератор Protocol Buffers
+│ ├── xml_generator.py # Генератор XML
+│ └── yang_generator.py # Генератор YANG-моделей
 │
-├── input/ # Input files
-│ ├── config.json # Configuration example
-│ ├── impulse_test_input.xml # Test UML-model
-│ └── patched_config.json # Modified configuration
+├── input/ # Входные файлы
+│ ├── config.json # Пример конфигурации
+│ ├── impulse_test_input.xml # Тестовая UML-модель
+│ └── patched_config.json # Модифицированная конфигурация
 │
-├── models/ # Data Models
-│ ├── config_model.py # Configuration Parameter Model
-│ └── uml_model.py # Model UML-classes
+├── models/ # Модели данных
+│ ├── config_model.py # Модель параметров конфигурации
+│ └── uml_model.py # Модель UML-классов
 │
-├── out/ # Generated files
-│ ├── bts-config.yang # Example YANG-model
-│ ├── config_*.json/xml # Genereted config
-│ └── meta.json # Metadata generate
+├── out/ # Сгенерированные файлы
+│ ├── bts-config.yang # Пример YANG-модели
+│ ├── config_*.json/xml # Сгенерированные конфиги
+│ └── meta.json # Метаданные генерации
 │
-├── parsers/ # Parsers input data
-│ ├── json_parser.py # Parser JSON
-│ └── xml_parser.py # Parser XML
+├── parsers/ # Парсеры входных данных
+│ ├── json_parser.py # Парсер JSON
+│ └── xml_parser.py # Парсер XML
 │
-└── validator/ # Validators
-└── validator.py # Validator UML-model
+└── validator/ # Валидаторы
+└── validator.py # Валидатор UML-моделей
 ```
 
-## Requirements
+## Требования
 
 - Python 3.11
-- Only Python standard libraries
+- Только стандартные библиотеки Python
 
-## Installation
+## Установка
 
-1. Clone repository:
+1. Клонируйте репозиторий:
    ```bash
    git clone <repo-url>
    cd Impulse_Telecom_Python_2025
 
-2. Make sure you are using Python 3.11:
+2. Убедитесь, что используется Python 3.11:
 ```bash
 python --version
 ```
-## Usage
+## Использование
 
-1. Place the input files in the input/ folder:
-   - impulse_test_input.xml - UML model of base station
-   - config.json - configuration parameters
+1. Поместите входные файлы в папку input/:
+   - impulse_test_input.xml - UML-модель базовой станции
+   - config.json - параметры конфигурации
 
-2. Start generation:
+2. Запустите генерацию:
 ```bash
 python main.py
 ```
-3. The results will be saved in the out/ folder:
-   - Configuration files (JSON/XML)
-   - YANG models
-   - Proto-files
-   - Generation metadata
+3. Результаты будут сохранены в папке out/:
+   - Конфигурационные файлы (JSON/XML)
+   - YANG-модели
+   - Proto-файлы
+   - Метаданные генерации
 
-## Implementation Features
-### ✅ Supported Generation Formats:
-   - YANG-Models for NETCONF
-   - Protocol Buffers for gRPC
-   - JSON/XML configuration
-   - C++ headers files
-### ✅ Validation Checks:
-   - UML Model Correctness
-   - Attribute Type Check
-   - Validation of Relationships between Classes
-   - Name Uniqueness Check
-### ✅ Architectural Solutions:
-   - Object-Oriented Approach
-   - "Strategy" Pattern for Generators
-   - Separation into Modules (Parsers/Generators/Validators)
-   - Automatic Output Directory Creation
+## Особенности реализации
+### ✅ Поддерживаемые форматы генерации:
+   - YANG-модели для NETCONF
+   - Protocol Buffers для gRPC
+   - JSON/XML конфигурации
+   - C++ заголовочные файлы
+### ✅ Проверки валидации:
+   - Корректность UML-модели
+   - Проверка типов атрибутов
+   - Валидация отношений между классами
+   - Проверка уникальности имен
+### ✅ Архитектурные решения:
+   - Объектно-ориентированный подход
+   - Паттерн "Стратегия" для генераторов
+   - Разделение на модули (парсеры/генераторы/валидаторы)
+   - Автоматическое создание выходной директории
    
